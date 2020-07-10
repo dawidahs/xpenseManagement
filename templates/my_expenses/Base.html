@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>{% block title %}Expensor{% endblock %}</title>
+</head>
+
+<body style="background-color: teal;">
+    {% block navbar %}
+        <div style="background-color: rgb(242, 248, 247);"> 
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/my_expenses/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/my_expenses/upload/">Upload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/my_expenses/index/">See All</a>
+                </li>
+            </ul>    
+        </div>
+    {% endblock %}
+    <div class="header">
+        <h1>Expensor</h1>
+    </div>
+        {% block container %}   
+        {% endblock %}
+    </div>
+    </div>
+        {% block list_display %}   
+        {% endblock %}
+    </div>
+</body>
+</html>

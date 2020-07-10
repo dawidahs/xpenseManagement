@@ -1,0 +1,16 @@
+{% extends 'my_expenses/Base.html' %}
+{% load static %}
+{% block list_display %}  
+    <div class="container">
+        <div class="card">
+        {% for expense in all_expenses %}
+            <p>{{ expense.title }}</p>
+            <p>{{ expense.description }}</p>
+            <p>{{ expense.category }}</p>
+            <a href="{% static expense.image %}" target="_blank"><img src="{% static expense.image %}" width="100px" height="100px"/></a>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
