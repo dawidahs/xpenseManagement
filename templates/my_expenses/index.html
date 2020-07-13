@@ -2,22 +2,24 @@
 {% load static %}
 {% block list_display %}  
     <div class="container">
-        <div class="card">
-            <div class="row">
-                    <p class="col-sm">Name</p>
-                    <p class="col-sm">Description</p>
-                    <p class="col-sm">Category</p>
-                    <p class="col-sm">Receipt</p>
+        {% for expense in all_expenses %}
+            <div class="card">
+                <div class="row">
+                        <p class="col-sm">Name</p>
+                        <p class="col-sm">Description</p>
+                        <p class="col-sm">Category</p>
+                        <p class="col-sm">Receipt</p>
+                    </div> 
+                <div class="row">
+                    <p class="col-sm">{{ expense.title }}</p>
+                    <p class="col-sm">{{ expense.description }}</p>
+                    <p class="col-sm">{{ expense.category }}</p>
+                    <a href="{% static expense.image %}" target="_blank"><img src="{% static expense.image %}" width="100px" height="100px"/></a>
+                
                 </div> 
-            <div class="row">
-            {% for expense in all_expenses %}
-                <p class="col-sm">{{ expense.title }}</p>
-                <p class="col-sm">{{ expense.description }}</p>
-                <p class="col-sm">{{ expense.category }}</p>
-                <a href="{% static expense.image %}" target="_blank"><img src="{% static expense.image %}" width="100px" height="100px"/></a>
-            {% endfor %}
-            </div> 
-        </div>
+                
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
 </body>
