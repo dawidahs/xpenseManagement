@@ -15,7 +15,7 @@ class Expense(models.Model):
     vendor_address = models.CharField(max_length=100, default="address")
     country = models.CharField(max_length=30, default="España")
     category = models.CharField(max_length=100, default="categroy")
-    attachment = models.FileField(upload_to="my_expenses/receipts/")
+    attachment = models.FileField(upload_to="receipts/")
 
     def __str__(self) -> str:
         return self.expense_name
