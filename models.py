@@ -1,21 +1,43 @@
 from django.db import models
+from django.utils import timezone
+
+class Expense(models.Model):
+    expense_name = models.CharField(max_length=100, default="Expense Name")
+    description = models.CharField(max_length=240, default="Description")  
+    recepit_date = models.DateField(max_length=10, default=timezone.now)
+    receipt_num = models.CharField(max_length=32, default="1")
+    total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    vat_perc = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    vat_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    subtotal = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    vendor_name = models.CharField(max_length=100, default="Vendor")
+    vendor_vat = models.CharField(max_length=20, default=" ")
+    vendor_address = models.CharField(max_length=100, default="address")
+    country = models.CharField(max_length=30, default="España")
+    category = models.CharField(max_length=100, default="categroy")
+    attachment = models.FileField(upload_to="my_expenses/receipts/")
+
+    def __str__(self) -> str:
+        return self.expense_name
 
 # Create your models here.
 class MyExpenses(models.Model):
-    FLIGHTS = "FL"
-    MEALS = "ML"
-    INTERNET = "IT"
-    PHONE = "PH"
-    SOCIAL_SECURITY = "SS"
-    CATEGORY_CHOICES = (
-        (FLIGHTS, "Flights"),
-        (MEALS, "Meals"),
-        (INTERNET, "Internet"),
-        (PHONE, "Phone Bill"),
-        (SOCIAL_SECURITY, "Social Security"),        
-    )
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    category = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default=MEALS)
-    image = models.CharField(max_length=100)
+    expense_name = models.CharField(max_length=100, default="Expense Name")
+    description = models.CharField(max_length=240, default="Description")  
+    recepit_date = models.DateField(max_length=10, default=timezone.now)
+    receipt_num = models.CharField(max_length=32, default="1")
+    total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    vat_perc = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    vat_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    subtotal = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    vendor_name = models.CharField(max_length=100, default="Vendor")
+    vendor_vat = models.CharField(max_length=20, default=" ")
+    vendor_address = models.CharField(max_length=100, default="address")
+    country = models.CharField(max_length=30, default="España")
+    category = models.CharField(max_length=100, default="categroy")
+    attachment = models.FileField(upload_to="my_expenses/receipts/")
+
+    def __str__(self) -> str:
+        return self.expense_name
+
 

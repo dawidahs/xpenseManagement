@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.home),
     path('upload/', views.upload, name="Upload"),
     path('index/', views.expenses_list, name="Expenses"),
+    path('index/expense_form/', views.expense_form, name="Expense Entry"),
 ]
 
 if settings.DEBUG:
