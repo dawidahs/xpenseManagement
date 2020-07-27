@@ -19,6 +19,6 @@ class expenseEntry(forms.ModelForm):
             'vendor_address' : forms.TextInput(attrs={'class': 'form-control'}),
             'country' : forms.TextInput(attrs={'class': 'form-control'}),
             'attachment' : forms.FileInput(attrs={'class': 'form-control-file'}),
-            'receipt_date' : forms.DateInput(format='%d/%m/%Y', attrs={'class': 'form-control'}),
+            'receipt_date' : forms.DateInput(attrs={'class': 'glyphicon glyphicon-calendar', 'id': 'datetimepicker1'}),
         }
 

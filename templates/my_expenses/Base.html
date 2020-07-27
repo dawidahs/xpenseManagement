@@ -6,26 +6,29 @@
     <title>{% block title %}Expensor{% endblock %}</title>
 </head>
 
-<body style="background-color: teal;">
+<body>
     {% block navbar %}
-        <div style="background-color: rgb(242, 248, 247);"> 
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/my_expenses/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/my_expenses/upload/">Upload</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/my_expenses/index/">See All</a>
-                </li>
-            </ul>    
-        </div>
+        <header class="card m-3" style="display: flex;">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: honeydew;">
+                <span class="d-inline-flex">
+                    <h1>Expensor</h1>
+                </span>
+                <ul class="navbar-nav ml-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/my_expenses/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/my_expenses/index/expense_form/">Upload</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/my_expenses/index/">See All</a>
+                    </li>
+                </ul>    
+            </nav>
+        </header>
     {% endblock %}
-    <div class="header">
-        <h1>Expensor</h1>
-    </div>
-    <div>
+
+    <div class="card m-3">
         {% block container %}   
         {% endblock %}
     </div>
