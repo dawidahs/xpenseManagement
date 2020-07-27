@@ -1,12 +1,13 @@
 {% extends 'my_expenses/Base.html' %}
 
-{% block form %}
-
-        <form type="form-group" method="POST" enctype="multipart/form-data">
+{% block container %}
+    <div class="form-group">
+        <form type="form-group" method="POST" enctype="multipart/form-data" class="p-3 card col-sm-6 mx-auto p-10 shadow p-4 mb-4 bg-white">
+            <h4 class="shadow p-4 mb-4 bg-white">New Record</h4>
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
+    </div>
 
 {% endblock %}

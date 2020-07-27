@@ -3,21 +3,28 @@
 {% block list_display %}  
     <div class="container">
         {% for expense in all_expenses %}
-            <div class="card">
-                <div class="row">
-                        <p class="col-sm">Name</p>
-                        <p class="col-sm">Description</p>
-                        <p class="col-sm">Category</p>
-                        <p class="col-sm">Receipt</p>
-                    </div> 
-                <div class="row">
-                    <p class="col-sm">{{ expense.expense_name }}</p>
-                    <p class="col-sm">{{ expense.description }}</p>
-                    <p class="col-sm">{{ expense.category }}</p>
+            <div class="card p-3">
+                <div style="float: left;;">
                     <a href="{% static expense.image %}" target="_blank"><img src="{% static expense.image %}" width="100px" height="100px"/></a>
-                
-                </div> 
-                
+                </div>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ expense.expense_name }}</td>
+                            <td>{{ expense.description }}</td>
+                            <td>{{ expense.category }}</td>
+                            <td>{{ expense.total }}</td>
+                        </tr>
+                    </tbody>
+                </table>                
             </div>
         {% endfor %}
     </div>
