@@ -2,13 +2,17 @@
 
 {% block container %}
     <div class="form-group m-3">
-        <form type="form-group" method="POST" enctype="multipart/form-data" class="p-3 card col-sm-12 mx-auto p-10 shadow p-4 mb-4 bg-white">
+        <form type="form-group" method="POST" enctype="multipart/form-data" class="p-3 card col-sm-6 mx-auto p-10 shadow p-4 mb-4 bg-white">
             <h4 class="shadow p-4 mb-4" style="background-color: rgb(126, 175, 163);">New Record</h4>
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
     </div>
 
 {% endblock %}

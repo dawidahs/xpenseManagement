@@ -1,11 +1,10 @@
-
 {% extends 'my_expenses/Base.html' %}
 {% load static %}
 {% block list_display %}  
-    <div class="container-fluid">
+    <div class="container">
         {% for expense in all_expenses %}
             <div class="card p-3">
-                <div>
+                <div style="float: left;;">
                     <a href="{% static expense.image %}" target="_blank"><img src="{% static expense.image %}" width="100px" height="100px"/></a>
                 </div>
                 <table class="table table-dark">
