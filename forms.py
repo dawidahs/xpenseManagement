@@ -1,5 +1,6 @@
 from django import forms
 from .models import Expense
+from .widgets import BootstrapDateTimePickerInput
 
 class expenseEntry(forms.ModelForm):
     class Meta:
@@ -19,6 +20,8 @@ class expenseEntry(forms.ModelForm):
             'vendor_address' : forms.TextInput(attrs={'class': 'form-control'}),
             'country' : forms.TextInput(attrs={'class': 'form-control'}),
             'attachment' : forms.FileInput(attrs={'class': 'form-control-file'}),
-            'receipt_date' : forms.DateInput(attrs={'class': 'glyphicon glyphicon-calendar', 'id': 'datetimepicker1'}),
+            'receipt_date' : forms.DateTimeField(
+                input_formats=['%d/%m/%Y'], 
+                widget=BootstrapDateTimePickerInput(),
+                )
         }
-
