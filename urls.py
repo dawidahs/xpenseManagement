@@ -7,10 +7,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.home),
     path('upload/', views.upload, name="Upload"),
+    #path('upload/', views.expense_form),
     path('index/', views.expenses_list, name="List"),
     path('index/expense_form/', views.expense_form, name="Expense Entry"),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#if settings.DEBUG:
+    #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

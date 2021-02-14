@@ -15,7 +15,10 @@ class Expense(models.Model):
     vendor_address = models.CharField(max_length=100, default="address")
     country = models.CharField(max_length=30, default="España")
     category = models.CharField(max_length=100, default="category")
-    attachment = models.FileField(upload_to="receipts/")
+    attachment = models.ImageField(upload_to="receipts/")
+
+    class Meta:
+        db_table = "expense_record"
 
     def __str__(self) -> str:
         return self.expense_name

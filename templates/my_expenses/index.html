@@ -3,9 +3,9 @@
 {% block list_display %}  
     <div class="container">
         {% for expense in all_expenses %}
-            <div class="card p-3">
+            <div class="card p-3 m-3">
                 <div style="float: left;;">
-                    <a href="{% static expense.image %}" target="_blank"><img src="{% static expense.image %}" width="100px" height="100px"/></a>
+                    <a href="{% static expense.attachment.url %}" target="_blank"><img src="{% static expense.attachment.url %}" alt="Receipt" style="max-height:100px"></a>
                 </div>
                 <table class="table table-dark">
                     <thead>
@@ -24,7 +24,17 @@
                             <td>{{ expense.total }}</td>
                         </tr>
                     </tbody>
-                </table>                
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><button type="submit">Update</button></td>
+                            <td><button type="submit">Delete</button></td>
+                        </tr> 
+                    </tbody>      
+                </table>      
             </div>
         {% endfor %}
     </div>
