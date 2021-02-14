@@ -25,16 +25,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><button type="submit">Update</button></td>
-                            <td><button type="submit">Delete</button></td>
-                        </tr> 
-                    </tbody>      
-                </table>      
+                <form action="{% url 'exp:expense_delete' expense.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete expense">
+                </form>     
             </div>
         {% endfor %}
     </div>
