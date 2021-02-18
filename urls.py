@@ -14,7 +14,8 @@ urlpatterns = [
     #path('upload/', views.expense_form),
     path('index/', views.expenses_list, name="List"),
     path('index/expense_form/', views.expense_form, name="Expense Entry"),
-    url(r'^delete/(?P<pk>[0-9]+)/$', views.expense_delete, name='expense_delete')
+    url(r'^delete/(?P<pk>[0-9]+)/$', views.expense_delete, name='expense_delete'),
+    url(r'^edit/(?P<pk>[0-9]+)/$', views.expense_edit, name='expense_edit'),
 ]
 
 #if settings.DEBUG:

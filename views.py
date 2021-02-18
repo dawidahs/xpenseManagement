@@ -23,6 +23,13 @@ def expenses_list(request):
     all_expenses = Expense.objects.all()
     return render(request, 'my_expenses/index.html', {'all_expenses': all_expenses})
 
+def expense_edit(request, pk):
+    expense = get_object_or_404(Expense, pk=pk)
+    if request.method == "POST":
+        expense.save()
+        return redirect(    'my_expenses/expense_form.html')
+    return render(request, 'my_expenses/index.html', {'expense': expense})
+
 def expense_delete(request, pk):
     expense = get_object_or_404(Expense, pk=pk)
     if request.method == "POST":
